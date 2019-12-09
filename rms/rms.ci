@@ -1,0 +1,19 @@
+node {
+	stage('prepare for build'){
+		parallel {
+			stage('clearing db'){}
+			stage('install deps'){}
+			stage('create thrift stub'){}
+		}
+	}
+	stage('run test'){
+		echo "try test multi times"
+		make test
+		make test
+		make test
+		make test
+	}
+	stage('build'){
+		make build
+	}
+}
