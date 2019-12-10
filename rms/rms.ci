@@ -1,9 +1,18 @@
 node {
 	stage('prepare for build'){
 		parallel {
-			stage('clearing db'){}
-			stage('install deps'){}
-			stage('create thrift stub'){}
+			stage('clearing db'){
+				make db_clear_test
+			}
+			stage('install deps'){
+				make deps
+			}
+			stage('create thrift stub'){
+				make thrift_auth
+				make thrift_student
+				make thrift_admin
+			}
+			make db_prepare_test
 		}
 	}
 	stage('run test'){
