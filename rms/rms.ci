@@ -1,13 +1,13 @@
 node {
 	stage('prepare for build'){
 		parallel {
-			stage('clearing db'){
+			clean_db:{
 				make db_clear_test
 			}
-			stage('install deps'){
+			install_deps:{
 				make deps
 			}
-			stage('create thrift stub'){
+			create_thrift_stub:{
 				make thrift_auth
 				make thrift_student
 				make thrift_admin
