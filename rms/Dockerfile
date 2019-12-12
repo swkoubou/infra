@@ -3,7 +3,7 @@ MAINTAINER awataki <awataki1206@gmail.com>
 USER root
 
 # install build deps
-RUN apk add make openrc
+RUN apk add make
 
 # download thrift file
 WORKDIR /usr/bin/
@@ -18,9 +18,5 @@ RUN tar xf ./go1.13.5.linux-amd64.tar.gz
 RUN cp ./go/bin/go /usr/bin
 RUN rm -r ./go*
 WORKDIR /var/jenkins_home
-
-# Setup openrc
-RUN mkdir -p /run/openrc
-RUN touch /run/openrc/softlevel
 
 USER jenkins
