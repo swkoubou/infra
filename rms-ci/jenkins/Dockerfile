@@ -7,7 +7,7 @@ RUN apk add make
 
 # download thrift file
 WORKDIR /usr/bin/
-RUN curl -L https://archive.swkoubou.com/RMS/bin/thrift -O
+RUN curl -L https://archive.swkoubou.com/RMS/linux/alpine/3.9.4/bin/thrift -O
 RUN chmod a+x /usr/bin/thrift
 
 # link to ld to musl golang is using /lib64/ld-linux-x86-64.so.2  for dynamic link.
