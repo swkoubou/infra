@@ -9,6 +9,7 @@ services:
       - "8080:8080"
     depends_on:
       - mariadb
+    restart: always
     
     env_file:
       - ./jenkins/env
@@ -21,3 +22,4 @@ services:
       - /var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=rms-password
+    restart: always
