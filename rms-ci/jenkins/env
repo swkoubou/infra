@@ -18,4 +18,4 @@ RMS_PLAIN_PASS=rms-test
 USER_ID=${UID}
 GROUP_ID=${GID}
 GOPATH=/var/jenkins_home/.go
-GOROOT=/usr/bin/go
+GOROOT=/usr/local/go
