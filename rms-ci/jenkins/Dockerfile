@@ -2,10 +2,6 @@ FROM jenkinsci/blueocean:1.21.0
 MAINTAINER awataki <awataki1206@gmail.com>
 USER root
 
-# add proxy config
-ENV HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
-ENV HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
-
 # install build deps
 RUN apk add make git
 
@@ -29,6 +25,7 @@ RUN rm -r ./go*
 WORKDIR $JENKINS_HOME
 
 # override permission
-CMD chown -R jenkins:jenkins $JENKINS_HOME
+RUN usermod -u $USER_ID -o -m jenkins
+RUN groupmod -g $GROUP_ID jenkins
 
 USER jenkins

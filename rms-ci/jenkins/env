@@ -15,3 +15,5 @@ RMS_SMTP_SENDER=noreply@rms.local
 RMS_USE_PLAINAUTH=true
 RMS_PLAIN_USER=swkoubou
 RMS_PLAIN_PASS=rms-test
+USER_ID=${UID}
+GROUP_ID=${GID}
