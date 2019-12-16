@@ -15,7 +15,5 @@ RMS_SMTP_SENDER=noreply@rms.local
 RMS_USE_PLAINAUTH=true
 RMS_PLAIN_USER=swkoubou
 RMS_PLAIN_PASS=rms-test
-HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
-HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 USER_ID=${UID}
 GROUP_ID=${GID}
