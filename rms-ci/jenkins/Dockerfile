@@ -1,9 +1,15 @@
 FROM jenkinsci/blueocean:1.21.0
 MAINTAINER awataki <awataki1206@gmail.com>
 USER root
-
 # install build deps
-RUN apk add make
+RUN apk add make git
+
+# add proxy config
+ARG HTTP_PROXY = "http://ccproxy.kanagawa-it.ac.jp:10080"
+ARG HTTPS_PROXY = "http://ccproxy.kanagawa-it.ac.jp:10080"
+RUN git config --global http.proxy $HTTP_PROXY
+RUN git config --global https.proxy $HTTPS_PROXY
+
 
 # download thrift file
 WORKDIR /usr/bin/
