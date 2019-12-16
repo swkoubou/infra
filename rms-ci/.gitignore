@@ -1,2 +1,2 @@
-/jenkins/config/**/*
-!/jenkins/config/**/.gitkeep
+/jenkins/jenkins_home/*
+!/jenkins/jenkins_home/.gitkeep

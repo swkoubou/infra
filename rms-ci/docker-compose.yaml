@@ -13,9 +13,7 @@ services:
     env_file:
       - ./jenkins/env
     volumes:
-      - ./jenkins/config/plugins/:/var/jenkins_home/plugins
-      - ./jenkins/config/jobs/:/var/jenkins_home/jobs
-      - ./jenkins/config/userContent/:/var/jenkins_home/userContent
+      - ./jenkins/jenkins_home:/var/jenkins_home/
   mariadb:
     image: mariadb/server:10.4
     container_name: jenkins-mariadb
