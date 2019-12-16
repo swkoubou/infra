@@ -5,8 +5,8 @@ USER root
 RUN apk add make git
 
 # add proxy config
-ARG HTTP_PROXY = "http://ccproxy.kanagawa-it.ac.jp:10080"
-ARG HTTPS_PROXY = "http://ccproxy.kanagawa-it.ac.jp:10080"
+ARG HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
+ARG HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 RUN git config --global http.proxy $HTTP_PROXY
 RUN git config --global https.proxy $HTTPS_PROXY
 
