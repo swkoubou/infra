@@ -29,6 +29,6 @@ RUN rm -r ./go*
 WORKDIR $JENKINS_HOME
 
 # override permission
-sudo chown -R jenkins:jenkins $JENKINS_HOME
+CMD chown -R jenkins:jenkins $JENKINS_HOME
 
 USER jenkins
