@@ -3,7 +3,7 @@ MAINTAINER awataki <awataki1206@gmail.com>
 USER root
 
 ENV HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
-ENV HTTPS_PROXY="https://ccproxy.kanagawa-it.ac.jp:10080"
+ENV HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 
 # install build deps
 RUN apk add make git
