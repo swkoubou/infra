@@ -2,9 +2,6 @@ version: '3'
 services:
   jenkins:
     build:
-      args:
-        - USER_ID=${UID}
-        - GROUP_ID=${GID}
       context: .
       dockerfile: ./jenkins/Dockerfile
     container_name: jenkins

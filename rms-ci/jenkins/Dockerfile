@@ -5,9 +5,6 @@ USER root
 ENV HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 ENV HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 
-ARG USER_ID
-ARG GROUP_ID
-
 # install build deps
 RUN apk add make git shadow
 
@@ -29,9 +26,5 @@ RUN tar xf ./go1.13.5.linux-amd64.tar.gz
 RUN cp ./go/bin/go /usr/bin
 RUN rm -r ./go*
 WORKDIR $JENKINS_HOME
-
-# override permission
-RUN usermod -u $USER_ID jenkins
-RUN groupmod -g $GROUP_ID jenkins
 
 USER jenkins
