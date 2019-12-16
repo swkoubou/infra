@@ -26,6 +26,9 @@ RUN curl -L https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz -O
 RUN tar xf ./go1.13.5.linux-amd64.tar.gz
 RUN cp ./go/bin/go /usr/bin
 RUN rm -r ./go*
-WORKDIR /var/jenkins_home
+WORKDIR $JENKINS_HOME
+
+# override permission
+sudo chown -R jenkins:jenkins $JENKINS_HOME
 
 USER jenkins
