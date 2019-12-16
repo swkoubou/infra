@@ -1,0 +1,24 @@
+version: '3'
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: ./jenkins/Dockerfile
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+    env_file:
+      - ./jenkins/env
+    volumes:
+      - ./jenkins/config/plugins/:/var/jenkins_home/plugins
+      - ./jenkins/config/jobs/:/var/jenkins_home/jobs
+      - ./jenkins/config/userContent/:/var/jenkins_home/userContent
+  mariadb:
+    image: mariadb/server:10.4
+    container_name: jenkins-mariadb
+    tmpfs:
+      - /var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=rms-password
