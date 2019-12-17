@@ -9,12 +9,12 @@ services:
       - "8080:8080"
     depends_on:
       - mariadb
-    restart: always
-    
     env_file:
       - ./jenkins/env
     volumes:
       - ./jenkins/jenkins_home:/var/jenkins_home/
+    restart: always
+
   mariadb:
     image: mariadb/server:10.4
     container_name: jenkins-mariadb
