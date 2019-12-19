@@ -23,6 +23,7 @@ RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 WORKDIR /usr/local/
 RUN curl -L https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz -O
 RUN tar xf ./go1.13.5.linux-amd64.tar.gz
+RUN rm ./go1.13.5.linux-amd64.tar.gz
 RUN cp ./go/bin/go /usr/bin
 
 WORKDIR $JENKINS_HOME
