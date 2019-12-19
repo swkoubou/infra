@@ -1,5 +1,5 @@
 FROM jenkinsci/blueocean:1.21.0
-MAINTAINER awataki <awataki1206@gmail.com>
+LABEL  maintainer "awataki <awataki1206@gmail.com>"
 USER root
 
 ENV HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
