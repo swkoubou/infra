@@ -6,7 +6,7 @@ ENV HTTP_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 ENV HTTPS_PROXY="http://ccproxy.kanagawa-it.ac.jp:10080"
 
 # install build deps
-RUN apk add make git shadow mariadb-client
+RUN apk add make git mariadb-client
 
 # set proxy to git
 RUN git config --global http.proxy $HTTP_PROXY
