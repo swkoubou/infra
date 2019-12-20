@@ -1,7 +1,7 @@
 # infra
 Infra Script in swk
 
-## RMS Jenkins
+## RMS(https://rms.cs.kanagawa-it.ac.jp) Jenkins
 ### How To Setup
 1. git clone this repo
 1. `cd infra`
