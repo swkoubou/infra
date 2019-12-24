@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  ldap:
+    image: osixia/openldap
+    container_name: ldap
+    environment:
+      LDAP_ORGANISATION: "swkoubou"
+      LDAP_DOMAIN: "swk.local"
+      # 必ず変更すること
+      LDAP_ADMIN_PASSWORD: "admin"
+    ports:
+      - "389:389"
+    volumes:
+      - ./db:/var/lib/ldap
+      - ./slapd.d:/etc/ldap/slapd.d
+      - ./ldif:/ldif
+    restart: always
+
+  phpldapadmin:
+    image: osixia/phpldapadmin
+    container_name: ldap_admin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap
+      PHPLDAPADMIN_HTTPS: "false"
+    ports:
+      - "8080:80"
+    depends_on:
+      - ldap
+    restart: always
